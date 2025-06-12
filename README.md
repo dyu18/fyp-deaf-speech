@@ -1,8 +1,8 @@
 # Final Year Project: Development of a Speaker-Independent Automatic Deaf Speech Recognition System
 
-This repo contains the main code developed for the experiments and analyses in the project. 
+This repo contains the main code developed for the experiments and analyses in the project. The audio demos of this project can be found at the [demo page](https://dyu18.github.io/fyp-deaf-speech/demo/).
 
-The dataset used in this project is not contained in this repo. However, the file structure is shown below:
+The dataset used in this project, [Corpus of Deaf Speech](http://dx.doi.org/10.1121/1.4994288), is not contained in this repo. However, the file structure assumed by the code is shown below:
 ```
 CorpusOfDeafSpeech
 ├─data_info
