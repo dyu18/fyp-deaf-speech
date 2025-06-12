@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deaf Speech Audio Demos</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .demo-set {
+      background: #eaeaea;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .set-title {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .set-description {
+    text-align: left;
+    font-size: 1rem;
+    color: #444444;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    }
+
+    .audio-group {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .group-label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .group-texts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .group-text {
+      flex: 1 1 45%;
+      background: #f3f3f3;
+      padding: 0.75rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    .audio-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .audio-box {
+      flex: 1 1 30%;
+      min-width: 250px;
+    }
+
+    .audio-box div {
+      margin-bottom: 0.3rem;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Audio Demos of Final Year Project</h1>
+    <p style="text-align: center; font-size: 1.2rem; color: #444444; margin-top: -1rem; margin-bottom: 2rem;">
+    Development of a Speaker-Independent Automatic Deaf Speech Recognition System
+    </p>
+    <p style="text-align: center; font-size: 1.0rem; color: #666; margin-top: -1rem; margin-bottom: 2rem;">
+    Xiaoran Daisy Yu <br> Department of Electrical and Electronic Engineering, Imperial College London
+    </p>
+
+  <!-- DEMO SET 1 -->
+  <div class="demo-set">
+    <div class="set-title">Demo Set 1: Integration of Deaf Speech ASR with TTS</div>
+    <p class="set-description"><br>TTS models are used to synthesise fluent speech corresponding to transcriptions produced by a Whisper model fine-tuned on deaf speech.
+        <br>The TTS outputs are generated using <a href="https://huggingface.co/spaces/LeeSangHoon/HierSpeech_TTS" target="_blank">HierSpeech++</a> and <a href="https://huggingface.co/spaces/cwtsam/Voice-Cloning" target="_blank">Coqui-TTS</a>, which are capable of partially preserving each speaker's own voice without the deaf speech characteristics.
+        <br>
+        <br>HierSpeech++ parameters: ttv_temperature=0.333, vc_temperature=0.333, duratuion_temperature=1, duratuion_length=0.6, denoise_ratio=0, random_seed=1111
+        <br>Coqui-TTS parameters: default
+    </p>
+
+    <div class="audio-group">
+      <div class="group-label">Sample 1.1: Subject 23, Passage DC4</div>
+      <div class="group-texts">
+        <div class="group-text"><b>Groundtruth:</b> <br> In Colonial America, wealthy families hired tutors and governesses to teach their children. Sometimes, they sent their sons to private schools. </div>
+        <div class="group-text"><b>Transcription (by fine-tuned Whisper):</b> <br> In colonial America: wealthy farmers held tutors and governesses to teach their children. Sometimes they sent their sons to private schools. </div>
+      </div>
+      <div class="audio-row">
+        <div class="audio-box">
+          <div>Original</div>
+          <audio controls>
+            <source src="audio/set1/S23DC4Orig.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-box">
+          <div>TTS Output (HierSpeech++)</div>
+          <audio controls>
+            <source src="audio/set1/S23DC4Hier.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-box">
+          <div>TTS Output (Coqui-TTS)</div>
+          <audio controls>
+            <source src="audio/set1/S23DC4Coqui.wav" type="audio/wav">
+          </audio>
+        </div>
+      </div>
+    </div>
+
+    <div class="audio-group">
+      <div class="group-label">Sample 1.2: Subject 29, Passage DC4</div>
+      <div class="group-texts">
+        <div class="group-text"><b>Groundtruth:</b> <br> In Colonial America, wealthy families hired tutors and governesses to teach their children. Sometimes, they sent their sons to private schools. </div>
+        <div class="group-text"><b>Transcription (by fine-tuned Whisper):</b> <br> It caught a large American weather family hiring tourists and governing to teach their children. Sometimes they sent their sons to a private school. </div>
+      </div>
+      <div class="audio-row">
+        <div class="audio-box">
+          <div>Original</div>
+          <audio controls>
+            <source src="audio/set1/S29DC4Orig.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-box">
+          <div>TTS Output (HierSpeech++)</div>
+          <audio controls>
+            <source src="audio/set1/S29DC4Hier.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-box">
+          <div>TTS Output (Coqui-TTS)</div>
+          <audio controls>
+            <source src="audio/set1/S29DC4Coqui.wav" type="audio/wav">
+          </audio>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEMO SET 2 -->
+  <div class="demo-set">
+    <div class="set-title">Demo Set 2: Data Augmentation for Deaf Speech with Zero-Shot Voice-Cloning</div>
+    <p class="set-description"><br>A state-of-the-art zero-shot voice cloning model, <a href="https://huggingface.co/HKUSTAudio/Llasa-3B" target="_blank">Llasa</a>, which is pre-trained on normal (typical) speech, is used to synthesise additional deaf speech samples for data augmentation, with original deaf speech samples used as prompt voices.
+        <br>For a comparison of output quality, synthetic deaf speech samples generated by two Llasa models of different sizes (3B and 8B) are both presented. In general, the output quality of Llasa-8B is found to be more stable. 
+        <br>
+        <br>Llasa parameters: top_p=0.95, temperature=0.9
+    </p>
+
+    <div class="audio-group">
+      <div class="group-label">Sample 2.1: Subject 23, Passage DC4, Prompt LJ004</div>
+      <div class="group-texts">
+        <div class="group-text"><b>Original Text:</b> <br> D C four Frontier Schools In Colonial America, wealthy families hired tutors and governesses to teach their children. Sometimes, they sent their sons.</div>
+        <div class="group-text"><b>Prompt Text:</b> <br> produced the block books, which were the immediate predecessors of the true printed book.</div>
+      </div>
+      <div class="audio-row">
+        <div class="audio-box">
+          <div>Original</div>
+          <audio controls>
+            <source src="audio/set2/S23DC4_15sec.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-box">
+          <div>Llasa-3B Output</div>
+          <audio controls>
+            <source src="audio/set2/S23_3b_LJ3.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-box">
+          <div>Llasa-8B Output</div>
+          <audio controls>
+            <source src="audio/set2/S23_LJ3.wav" type="audio/wav">
+          </audio>
+        </div>
+      </div>
+    </div>
+
+    <div class="audio-group">
+      <div class="group-label">Sample 2.2: Subject 27, Passage DC4, Prompt LJ001</div>
+      <div class="group-texts">
+        <div class="group-text"><b>Original Text:</b> <br> D C four Frontier Schools In Colonial America, wealthy families hired tutors and governesses to teach their children. Sometimes, they sent their sons.</div>
+        <div class="group-text"><b>Prompt Text:</b> <br> Printing, in the only sense with which we are at present concerned, differs from most if not from all the arts and crafts represented in the Exhibition.</div>
+      </div>
+      <div class="audio-row">
+        <div class="audio-box">
+          <div>Original</div>
+          <audio controls>
+            <source src="audio/set2/S27DC4_15sec.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-box">
+          <div>Llasa-3B Output</div>
+          <audio controls>
+            <source src="audio/set2/S27_3b_LJ0.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-box">
+          <div>Llasa-8B Output</div>
+          <audio controls>
+            <source src="audio/set2/S27_LJ0.wav" type="audio/wav">
+          </audio>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

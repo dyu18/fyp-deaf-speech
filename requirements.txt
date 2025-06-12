@@ -1,0 +1,13 @@
+datasets==3.2.0
+evaluate==0.4.3
+librosa==0.10.2
+matplotlib==3.8.4
+numpy==1.26.4
+pandas==2.2.2
+peft==0.14.0
+python_docx==1.1.2
+torch==2.6.0+cu118
+tqdm==4.67.1
+transformers==4.49.0
+whisper_normalizer==0.0.10
+jiwer

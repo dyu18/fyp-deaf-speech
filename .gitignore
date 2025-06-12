@@ -1,2 +1,9 @@
 CorpusOfDeafSpeech
-RAWDysPeech
+uaspeech
+.ipynb_checkpoints
+__pycache__
+trainer_output
+img
+loss_curves
+sammon
+code_archive
